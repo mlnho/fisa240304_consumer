@@ -1,0 +1,37 @@
+server:
+  port: 8989
+  address: 3.34.178.182
+
+# project 별칭 등록
+# 다른 project에서 호출할때 사용되는 이름
+spring:
+  application:
+    name: CONSUMER-SERVICE
+  boot:
+    admin:
+      client:
+        instance:
+          service-url: http://localhost:8989
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    
+
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://54.180.144.64:8761/eureka
+  instance:
+    prefer-ip-address: true
+    ip-address: ${server.address}
+    instance-id: ${server.address}:${spring.application.name}:${server.port}
+
+
+
+
+
