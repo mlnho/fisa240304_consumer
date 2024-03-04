@@ -1,7 +1,7 @@
 server:
   port: 8989
   address: 3.34.178.182
-
+  
 # project 별칭 등록
 # 다른 project에서 호출할때 사용되는 이름
 spring:
@@ -15,15 +15,15 @@ spring:
 management:
   endpoints:
     web:
-      exposure:
+      exposure: 
         include: "*"
     
 
 
 eureka:
   client:
-    fetch-registry: true
-    register-with-eureka: true
+    fetch-registry: false
+    register-with-eureka: false
     service-url:
       default-zone: http://54.180.144.64:8761/eureka
   instance:
