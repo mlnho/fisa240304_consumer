@@ -11,7 +11,7 @@ spring:
     admin:
       client:
         instance:
-          service-url: http://localhost:8989
+          service-url: http://3.34.178.182:8989
 management:
   endpoints:
     web:
