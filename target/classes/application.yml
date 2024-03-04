@@ -1,6 +1,6 @@
 server:
   port: 8989
-  address: 3.34.178.182
+  address: 0.0.0.0
   
 # project 별칭 등록
 # 다른 project에서 호출할때 사용되는 이름
@@ -22,8 +22,8 @@ management:
 
 eureka:
   client:
-    fetch-registry: false
-    register-with-eureka: false
+    fetch-registry: true
+    register-with-eureka: true
     service-url:
       default-zone: http://54.180.144.64:8761/eureka
   instance:
