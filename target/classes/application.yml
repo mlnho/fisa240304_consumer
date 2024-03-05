@@ -1,7 +1,6 @@
 server:
   port: 8989
-  address: 172.31.37.48
-  
+  address: 172.31.4.120 #EC2 private IP
 # project 별칭 등록
 # 다른 project에서 호출할때 사용되는 이름
 spring:
@@ -11,21 +10,19 @@ spring:
     admin:
       client:
         instance:
-          service-url: http://3.34.178.182:8989
+          service-url: http://54.180.138.74:8989 #EC2 public IP
 management:
   endpoints:
     web:
       exposure: 
         include: "*"
-    
-
 
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://54.180.144.64:8761/eureka
+      defaultZone: http://43.202.50.68:8761/eureka/ #Eureka EC2 public IP
   instance:
     prefer-ip-address: true
     ip-address: ${server.address}
